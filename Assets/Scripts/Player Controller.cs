@@ -7,6 +7,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementDirection;
 
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void OnMove(InputValue value)
     {
         movementDirection = value.Get<Vector2>();
